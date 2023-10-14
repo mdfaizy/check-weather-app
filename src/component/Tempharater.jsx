@@ -8,9 +8,8 @@ import rainyImage from "../assets/rain.png";
 import drizzleImage from '../assets/drizzle.png';
 import clearImage from '../assets/clear.png';
 import visibility_icon from "../assets/visibility1.png";
-// import presser_icon from "../assets/Presser1.png";
 import snow_icon from '../assets/snow.png';
-import presser_icon from '../assets/Presser1.png';
+import presser_icon from '../assets/presser1.png';
 const Tempharater = () => {
   const [name, setName] = useState("");
   const [data, setData] = useState({
