@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import "./Temp.css";
-import search_icon from '../assets/search.png';
+import search_icon from "../assets/search.png";
 import cloud_icon from "../assets/cloud.png";
 import humidity_icon from "../assets/humidity.png";
 import windImage from "../assets/wind.png";
 import rainyImage from "../assets/rain.png";
-import drizzleImage from '../assets/drizzle.png';
-import clearImage from '../assets/clear.png';
+import drizzleImage from "../assets/drizzle.png";
+import clearImage from "../assets/clear.png";
 import visibility_icon from "../assets/visibility1.png";
-import snow_icon from '../assets/snow.png';
-import presser_icon from '../assets/presser1.png';
+import snow_icon from "../assets/snow.png";
+import presser_icon from "../assets/presser1.png";
 const Tempharater = () => {
   const [name, setName] = useState("");
   const [data, setData] = useState({
@@ -17,11 +17,11 @@ const Tempharater = () => {
     name: "Delhi",
     humidity: 10,
     speed: 2,
-    image: cloud_icon, 
+    image: cloud_icon,
     visibility: 300,
     pressure: 4,
   });
-  const [localTime, setLocalTime] = useState(new Date());
+  // const [localTime, setLocalTime] = useState(new Date());
   async function getData() {
     try {
       const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=13bc954b5abbedb864cff0a17977c918&units=metric`;
@@ -54,16 +54,16 @@ const Tempharater = () => {
     } catch (err) {
       console.error("no data");
       // Set the default image on error
-      setData({ ...data, image: cloud_icon }); 
+      setData({ ...data, image: cloud_icon });
     }
   }
   useEffect(() => {
     getData();
     // Run on initial component load
-  }, []); 
+  }, []);
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setLocalTime(new Date());
+      // setLocalTime(new Date());
     }, 1000);
     return () => clearInterval(intervalId);
   }, []);
@@ -75,10 +75,10 @@ const Tempharater = () => {
       getData();
     }
   };
-    const handleKeyPress = (e) => {
+  const handleKeyPress = (e) => {
     if (e.key === "Enter" && name.trim() !== "") {
       // Fetch data when Enter key is pressed
-      getData(name); 
+      getData(name);
     }
   };
   return (
@@ -100,37 +100,35 @@ const Tempharater = () => {
       </div>
       <div className="weather-temp">{data.temp.toFixed(2)}°C</div>
       <div className="weather-location">{data.name}</div>
-      <div className="local-time">{localTime.toLocaleTimeString()}</div>
+      {/* <div className="local-time">{localTime.toLocaleTimeString()}</div> */}
       <div className="data-details">
         <div className="element">
           <img src={humidity_icon} className="icon" alt="humidity_icon" />
           <div className="data">
-            <div className="humidity-percent">
-              {Math.round(data.humidity)}%
-            </div>
+            <div className="humidity-percent">{Math.round(data.humidity)}%</div>
             <div className="text">Humidity</div>
           </div>
         </div>
         <div className="element">
           <img src={windImage} alt="wind_icon" />
           <div className="data">
-            <div className="speed">
-              {Math.round(data.speed)} km/h
-            </div>
+            <div className="speed">{Math.round(data.speed)} km/h</div>
             <div className="text">Wind</div>
           </div>
         </div>
         <div className="element">
           <img src={presser_icon} alt="pressure_icon" />
           <div className="data">
-            <div className="pressure">
-              {Math.round(data.pressure)}
-            </div>
+            <div className="pressure">{Math.round(data.pressure)}</div>
             <div className="text">Pressure</div>
           </div>
         </div>
         <div className="element">
-          <img className="visibility" src={visibility_icon} alt="visibility_icon" />
+          <img
+            className="visibility"
+            src={visibility_icon}
+            alt="visibility_icon"
+          />
           <div className="data">
             <div className="visibility-percent">
               {Math.round(data.visibility)}
@@ -143,10 +141,3 @@ const Tempharater = () => {
   );
 };
 export default Tempharater;
-
-
-
-
-
-
-
