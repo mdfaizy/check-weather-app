@@ -1,40 +1,42 @@
-.top-bar{  
-    color:black;
-    /* padding: 0 5rem; */
-    display: flex;
-    height: 60px;
-   justify-content: center;
-   align-items: center;
-    
+.top-bar {
+  color: rgb(51, 43, 43);
+  display: flex;
+  color: white;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
 }
-.top-bar-head{
-    display: flex;
-    justify-content: center;
-    font-size: larger !important;
-    height: 100%;
-    align-items: center;
-    
+.top-bar-head {
+  display: flex;
+  justify-content: center;
+  font-size: larger !important;
+  height: 100%;
+  align-items: center;
 }
-.top-bar-head h1{
-    font-size: 1em ;
-    transform: translateY(3px);
-    justify-content: center;
-    align-items: center;
+.top-bar-head h1 {
+  font-size: 2em;
+  transform: translateY(3px);
+  justify-content: center;
+  align-items: center;
 }
-
-.top-bar-head-icon{
-    animation-name: rotate;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    padding-left: 0.5rem;
-    padding-right:0.5rem;
-    justify-content: center;
-   align-items: center;
-
-    background-color: transparent;
+.top-bar-head-icon {
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+  animation-name: rotate;
+  animation-duration: 5s;
+  justify-content: center;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  /* padding-left: 0.5rem;
+  padding-right: 0.5rem; */
+  background-color: transparent;
 }
 @keyframes rotate {
-    from{ transform: rotate(-360deg); }
-    to{ transform: rotate(360deg); }
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

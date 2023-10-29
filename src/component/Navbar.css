@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+  }
+.faizy_2{
+    display: flex;
+    justify-content: space-around;
+}
+.faizy1 li{
+    padding-top: 20px;
+    font-size: 25px;
+}
+.nav-item .nav-links {
+      color: #F9F7F7;
+  }
