@@ -14,28 +14,23 @@
 }
 .current_container_top {
   display: flex;
-  /* padding-top: 10px; */
   justify-content: center;
 }
 .current_top_section img {
   width: 90px;
   height: 90px;
   display: flex;
-  /* text-align: center;
-  align-items: center;
-  justify-content: center; */
   margin-left: 7rem;
 }
 .current_location_name {
   color: white;
   font-size: 1.5rem;
-  padding-top: 20px;
+  margin-top: -30px;
   text-transform: uppercase;
 }
 .current_temperature {
   display: flex;
   color: white;
-  padding-top: 10px;
   font-size: 1.5rem;
   justify-content: center;
 }
@@ -43,7 +38,6 @@
   display: flex;
   color: white;
   font-size: 1.2rem;
-  padding-top: 10px;
   text-transform: uppercase;
   justify-content: center;
 }
@@ -61,6 +55,7 @@
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(2, 1fr);
 }
+
 .current_humidity {
   color: white;
   font-size: 1.2rem;
@@ -75,14 +70,14 @@
   font-size: 1.2rem;
   justify-content: center;
 }
-.press_text{
+.press_text {
   text-transform: uppercase;
-font-size: 0.9rem;
+  font-size: 0.9rem;
+  color: white;
 }
 .cureentWeather_element {
   gap: 12px;
   margin: auto;
-  display: flex;
   flex-wrap: wrap;
   width: 150px;
   height: 110px;

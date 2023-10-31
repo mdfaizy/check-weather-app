@@ -1,11 +1,11 @@
 // import React from 'react'
 
-import Tempharater from "./Tempharater"
+import Temperature from "./Temperature"
 
 const SearchWeather = () => {
   return (
     <div >
-      <Tempharater/>
+      <Temperature/>
     </div>
   )
 }

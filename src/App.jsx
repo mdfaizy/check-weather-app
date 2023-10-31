@@ -1,31 +1,36 @@
-// import  ReactDOM  from "react-dom/client";
-import './App.css'
-// import Tempharater from "./component/Tempharater";
-import TopSection from "./component/TopSection";
-// import Navbar from "./component/Navbar";
-import {Routes,Route} from 'react-router-dom';
+import './App.css';
+import { useState } from 'react';
+import TopSection from './component/TopSection';
 import CurrentWeather from './component/CurrentWeather';
 import SearchWeather from './component/SearchWeather';
-import Home from './component/Home';
-
 
 function App() {
-  return (
-    <div className='app_container'>
-       <div className="main">
-      <TopSection/>
-        {/* <Navbar /> */}
-        <Home/>
-        {/* <Tempharater/> */}
+  const [currentWeather, setCurrentWeather] = useState(true);
 
-       </div>
-       <Routes>
-       <Route path="/currentweather" element={<CurrentWeather />} />
-       <Route path="/searchWeather" element={<SearchWeather />} />
-       </Routes>
-     
+  const handleCurrentWeatherClick = () => {
+    setCurrentWeather(true);
+  };
+
+  const handleSearchWeatherClick = () => {
+    setCurrentWeather(false);
+  };
+
+  return (
+    <div className="app_container">
+      <div className="main">
+        <TopSection />
+        <div className="user_handle">
+          <div onClick={handleCurrentWeatherClick}>
+            Current Weather
+          </div>
+          <div onClick={handleSearchWeatherClick}>
+            Search Weather
+          </div>
+        </div>
+      </div>
+      {currentWeather ? <CurrentWeather /> : <SearchWeather />}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
