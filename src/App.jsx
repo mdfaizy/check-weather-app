@@ -10,7 +10,6 @@ function App() {
   const handleCurrentWeatherClick = () => {
     setCurrentWeather(true);
   };
-
   const handleSearchWeatherClick = () => {
     setCurrentWeather(false);
   };
