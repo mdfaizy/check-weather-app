@@ -10,6 +10,7 @@ import clearImage from "../assets/clear.png";
 import visibilityfaizy4_icon from "../assets/visibilityfaizy4.png";
 import snow_icon from "../assets/snow.png";
 import presser_icon from "../assets/presser1.png";
+import { YOUR_API_KEY } from "../config";
 const Temperature = () => {
   const [name, setName] = useState("");
   const [data, setData] = useState({
@@ -21,7 +22,7 @@ const Temperature = () => {
     visibility: 300,
     pressure: 4,
   });
- const YOUR_API_KEY="13bc954b5abbedb864cff0a17977c918";
+//const YOUR_API_KEY="13bc954b5abbedb864cff0a17977c918";
   async function getData() {
     try {
       if (name.trim() === "") {
@@ -31,6 +32,7 @@ const Temperature = () => {
       // const apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=13bc954b5abbedb864cff0a17977c918&units=metric`
       const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${YOUR_API_KEY}&units=metric`;
       const response = await fetch(apiUrl);
+
       const data = await response.json();
      console.log(data.data);
       let imagePath = "";
@@ -68,6 +70,7 @@ const Temperature = () => {
  
   const handleChange = (e) => {
     setName(e.target.value);
+  
   };
   const handlerClick = () => {
     if (name !== "") {

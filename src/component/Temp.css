@@ -5,7 +5,7 @@
   transform: translateY(-5);
   margin: auto;
   box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.4), 0 12px 60px 0 rgba(0, 0, 0, 0.3);
-  background-color: rgb(112, 122, 139);
+  /* background-color: rgb(112, 122, 139); */
   border-radius: 1rem;
   justify-content: center;
   /* align-items: center; */
@@ -21,7 +21,7 @@
   display: flex;
   width: 250px;
   height: 40px;
-  background: rgb(207, 200, 186);
+  background: rgb(227, 220, 206);
   border: none;
   border-radius: 40px;
   padding-left: 40px;
@@ -167,9 +167,16 @@
     transform: scale(1);
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .temp-app {
     position: relative;
     top: 0.2vh;
+    width: 100%;
+  }
+  .top-section input{
+    width: auto;
+  }
+  .element{
+   width: 100%;
   }
 }

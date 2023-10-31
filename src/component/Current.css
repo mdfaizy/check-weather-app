@@ -1,10 +1,10 @@
 .current_container {
   width: 450px;
-  height: 610px;
+  height: 510px;
   margin: auto;
   transform: translateY(-5);
   box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.4), 0 12px 60px 0 rgba(0, 0, 0, 0.3);
-  background-color: rgb(112, 122, 139);
+  /* background-color: rgb(112, 122, 139); */
   border-radius: 1rem;
   justify-content: center;
   text-align: center;
@@ -12,15 +12,11 @@
   margin-top: 14px;
   display: flex;
 }
-.current_container_top {
-  display: flex;
-  justify-content: center;
-}
 .current_top_section img {
   width: 90px;
   height: 90px;
   display: flex;
-  margin-left: 7rem;
+  margin: 0 auto;
 }
 .current_location_name {
   color: white;
@@ -41,6 +37,12 @@
   text-transform: uppercase;
   justify-content: center;
 }
+.current_img_top{
+  display: flex;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  justify-content: center;
+}
 .current_time {
   display: flex;
   color: white;
@@ -51,18 +53,19 @@
   gap: 20px;
   display: grid;
   flex-wrap: wrap;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(2, 1fr);
 }
-
 .current_humidity {
   color: white;
   font-size: 1.2rem;
+  padding-top: 10px;
 }
 .current_wind {
   color: white;
   font-size: 1.2rem;
+  padding-top: 10px;
 }
 .current_pressure {
   color: white;
@@ -74,24 +77,25 @@
   text-transform: uppercase;
   font-size: 0.9rem;
   color: white;
+  padding-top: 5px;
 }
-.cureentWeather_element {
-  gap: 12px;
-  margin: auto;
+.currentWeather_element {
+  margin: 0 auto;
   flex-wrap: wrap;
   width: 150px;
   height: 110px;
-  padding-top: 10px;
+  padding:10px;
   border-radius: 10px;
-  text-align: center;
+ justify-content: center;
+  display: flex;
   flex-direction: column;
   background-color: rgb(67, 100, 100);
 }
-.cureentWeather_element img {
+.currentWeather_element img {
   width: 20px;
   height: 20px;
   display: flex;
-  margin-left: 4rem;
+  margin: 0 auto;
   filter: grayscale(0%);
   animation-name: motion;
   animation-duration: 4s;
@@ -99,4 +103,23 @@
   transition: filter 0.3s ease;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+}
+@media screen and (max-width: 600px) {
+  .current_container {
+    width: 100%;
+  }
+  .currentWeather_element {
+    width: 100%;
+  }
+  .current_img_top{
+    margin:auto;
+    width: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ text-align: center;    
+  }
+  .currentWeather_element img{
+  margin: 0 auto;
+  }
 }
