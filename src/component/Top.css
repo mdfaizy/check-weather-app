@@ -6,6 +6,12 @@
   justify-content: center;
   align-items: center;
 }
+.time_date h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
 .top-bar-head {
   display: flex;
   justify-content: center;

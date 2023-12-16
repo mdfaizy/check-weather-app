@@ -9,31 +9,41 @@ import drizzleImage from "../assets/drizzle.png";
 import clearImage from "../assets/clear.png";
 import snow_icon from "../assets/snow.png";
 import presser_icon from "../assets/presser1.png";
-import { YOUR_API_KEY } from "../config";
+// import { YOUR_API_KEY } from "../config";
 const CurrentWeather = () => {
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(true);
   const [currentTime, setCurrentTime] = useState(new Date());
+  
 
   useEffect(() => {
-    // Get user's location using Geolocation API
-    navigator.geolocation.getCurrentPosition(async (position) => {
-      const { latitude, longitude } = position.coords;
-      // Make a request to the OpenWeatherMap API
-      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${YOUR_API_KEY}&units=metric`;
+    const fetchWeather = async () => {
       try {
-        const response = await axios.get(apiUrl);
-        setWeather(response.data);
+        // Get user's location using Geolocation API
+        navigator.geolocation.getCurrentPosition(async (position) => {
+          const { latitude, longitude } = position.coords;
+          const apiKey =import.meta.env.VITE_REACT_APP_API_KEY; // Replace with your OpenWeatherMap API key
+
+          // Make a request to the OpenWeatherMap API
+          const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+          const response = await axios.get(apiUrl);
+
+          setWeather(response.data);
+          setLoading(false);
+        });
       } catch (error) {
         console.error("Error fetching weather data:", error);
-      } finally {
         setLoading(false);
       }
-    });
-    // current time
+    };
+
+    fetchWeather();
+
+    // Update current time every minute
     const timer = setInterval(() => {
       setCurrentTime(new Date());
     }, 60000);
+
     return () => {
       clearInterval(timer);
     };
