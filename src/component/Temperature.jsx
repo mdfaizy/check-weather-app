@@ -54,7 +54,6 @@ const Temperature = () => {
       const weatherData = await response.json();
 
       const imagePath = getImagePath(weatherData.weather[0].main);
-
       setData({
         temp: weatherData.main.temp,
         speed: weatherData.wind.speed,
@@ -75,21 +74,17 @@ const Temperature = () => {
       setLoading(false); // Set loading to false when data fetching completes (either success or failure)
     }
   }
-
   useEffect(() => {
     getData(name);
   }, []);
-
   const handleChange = (e) => {
     setName(e.target.value);
   };
-
   const handlerClick = () => {
     if (name !== "") {
       getData(name);
     }
   };
-
   const handleKeyPress = (e) => {
     if (e.key === "Enter" && name.trim() !== "") {
       getData(name);
@@ -205,3 +200,8 @@ const Temperature = () => {
 };
 
 export default Temperature;
+
+
+
+
+

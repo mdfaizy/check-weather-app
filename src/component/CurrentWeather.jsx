@@ -14,11 +14,10 @@ const CurrentWeather = () => {
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(true);
   const [currentTime, setCurrentTime] = useState(new Date());
-  
-
   useEffect(() => {
     const fetchWeather = async () => {
       try {
+        
         // Get user's location using Geolocation API
         navigator.geolocation.getCurrentPosition(async (position) => {
           const { latitude, longitude } = position.coords;
@@ -36,9 +35,7 @@ const CurrentWeather = () => {
         setLoading(false);
       }
     };
-
     fetchWeather();
-
     // Update current time every minute
     const timer = setInterval(() => {
       setCurrentTime(new Date());
